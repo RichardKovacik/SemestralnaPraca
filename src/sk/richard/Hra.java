@@ -48,7 +48,7 @@ public class Hra extends JPanel implements ActionListener {
         //pokial hra bezi
         if (this.castiHry.isHraBezi()){
             hadik.pohybHada();
-            if (jablko.skotrolujJablko()){//ak had zje jablko zvysi sa rychlost hry(teda zmensi sa cas medzi zobrazeniami)
+            if (jablko.skotrolujJablko()){//ak had zje jablko zvysi sa rychlost hry(teda zmensi sa cas medzi jednotlivymi zobrazeniami)
                 cas.setDelay(cas.getDelay()-5);
             }
             hadik.skontrolujKoliziu();
