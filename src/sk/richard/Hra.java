@@ -30,9 +30,9 @@ public class Hra extends JPanel implements ActionListener {
     }
 
     public void zacniHru(){
+        cas=new Timer(this.castiHry.getRychlostHry(),this);
         jablko.generujNoveJablko();
         this.castiHry.setHraBezi(true);
-        cas=new Timer(this.castiHry.getRychlostHry(),this);
         cas.start();
     }
 
@@ -48,7 +48,9 @@ public class Hra extends JPanel implements ActionListener {
         //pokial hra bezi
         if (this.castiHry.isHraBezi()){
             hadik.pohybHada();
-            jablko.skotrolujJablko();
+            if (jablko.skotrolujJablko()){//ak had zje jablko zvysi sa rychlost hry(teda zmensi sa cas medzi zobrazeniami)
+                cas.setDelay(cas.getDelay()-5);
+            }
             hadik.skontrolujKoliziu();
         }
         repaint();

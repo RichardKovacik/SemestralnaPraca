@@ -23,13 +23,15 @@ public class Jablko extends JPanel {
         jablkoX=random.nextInt((plocha.getSirkaPlochy()/blok.getVelkostBloku()))*blok.getVelkostBloku();
         jablkoY=random.nextInt((plocha.getVyskaPlochy()/blok.getVelkostBloku()))*blok.getVelkostBloku();
     }
-    public void skotrolujJablko(){
+    public boolean skotrolujJablko(){
         //ak sa pozicia jablka bude zhodovat s poziciou hlavy hada
         if ((jablkoX==hadik.getX(0))&&(jablkoY==hadik.getY(0))){
             hadik.setDlzkaHada(hadik.getDlzkaHada()+1);
             zjedeneJablka++;
             generujNoveJablko();
+            return true;
         }
+        return false;
 
 
     }
