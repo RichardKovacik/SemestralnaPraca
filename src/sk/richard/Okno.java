@@ -1,20 +1,20 @@
 package sk.richard;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class Okno {
-    private final JFrame jFrame;
+    private final JFrame platno;
 
     public Okno(){
-        jFrame=new JFrame("Snake Game");
-        jFrame.add(new Hra());
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setResizable(false);
-        jFrame.pack();
+        platno =new JFrame("Snake Game");
+        platno.add(new Hra());
+        platno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        platno.setResizable(false);
+        platno.pack();
     }
     //metoda zobrazi okno do stredu obrazovky
     public void zobrazOkno(){
-        jFrame.setVisible(true);
-        jFrame.setLocationRelativeTo(null);
+        platno.setVisible(true);
+        platno.setLocationRelativeTo(null);
     }
 }
